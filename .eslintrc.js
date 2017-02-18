@@ -3,7 +3,7 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: 'standard',
+  extends: ['standard', 'react'],
   rules: {
     indent: [2, 2, {"SwitchCase": 1}],
 
@@ -18,6 +18,9 @@ module.exports = {
     //team rules
     'no-cond-assign': 2,
     'no-shadow': 2,
+
+    // react
+    'react/prop-types': [2, { ignore: ['children'] }]
   },
 
   //need these so that tests pass
@@ -34,5 +37,12 @@ module.exports = {
     'afterEach': true,
     'fail': true,
     'xit': true
+  },
+  plugins: ['react'],
+  parserOptions: {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "jsx": true
+    }
   }
 };
